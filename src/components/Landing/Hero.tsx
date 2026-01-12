@@ -40,7 +40,7 @@ export default function Hero() {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className=" w-full sm:w-auto rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition"
+                    className=" w-full sm:w-auto rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition cursor-pointer"
                 >
                     Buscar clima
                 </motion.button>
