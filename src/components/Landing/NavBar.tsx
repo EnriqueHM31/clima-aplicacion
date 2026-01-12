@@ -3,13 +3,8 @@ import LinkButton from "../Atomos/LinkButton"
 import ICONO from "/logo.ico"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import type { Target, Transition } from "framer-motion";
+import type { MotionVariant } from "../../types";
 
-export interface MotionVariant {
-    initial: Target;
-    animate: Target;
-    transition?: Transition;
-}
 export default function NavBar() {
     const buttonVariants: MotionVariant = {
         initial: {
