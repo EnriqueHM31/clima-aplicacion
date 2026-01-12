@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import FormClima from "../FormClima";
 
 export default function Hero() {
     return (
@@ -25,26 +26,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Formulario */}
-            <motion.form
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className=" mt-10 flex flex-col gap-4 sm:flex-row items-center justify-center"
-            >
-                <input
-                    type="text"
-                    placeholder="Ej. Ciudad de México"
-                    className=" w-full sm:w-80 rounded-xl bg-white/10 px-5 py-3 text-white placeholder:text-slate-400 outline-none ring-1 ring-white/10 focus:ring-2 focus:ring-blue-500 backdrop-blur"
-                />
-
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className=" w-full sm:w-auto rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition cursor-pointer"
-                >
-                    Buscar clima
-                </motion.button>
-            </motion.form>
+            <FormClima />
 
         </div>
     );
