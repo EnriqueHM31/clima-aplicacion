@@ -1,10 +1,15 @@
+import Fondo from './components/Fondo'
 import AppRouter from './routes/routes'
 
 function App() {
 
   return (
     <>
-      <AppRouter />
+      <div className=''>
+        <Fondo>
+          <AppRouter />
+        </Fondo>
+      </div>
     </>
   )
 }
