@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import type { Target, Transition } from "framer-motion";
-
-export interface MotionVariant {
-    initial: Target;
-    animate: Target;
-    transition?: Transition;
-}
+import type { MotionVariant } from "../../types";
 
 interface PropsLinkButton {
     text: string;
