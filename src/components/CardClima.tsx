@@ -10,14 +10,7 @@ interface CardClimaProps {
     icono: ReactNode;
 }
 
-export default function CardClima({
-    ciudad,
-    hora,
-    temperatura,
-    viento,
-    humedad,
-    icono,
-}: CardClimaProps) {
+export default function CardClima({ ciudad, hora, temperatura, viento, humedad, icono }: CardClimaProps) {
     return (
         <motion.section
             className="flex justify-center w-full px-4"
