@@ -1,4 +1,4 @@
-import Fondo from './components/Fondo'
+import Fondo from './components/Landing/Fondo'
 import AppRouter from './routes/routes'
 
 function App() {
