@@ -1,9 +1,10 @@
+import AppRouter from './routes/routes'
 
 function App() {
 
   return (
     <>
-      <h1>Hola</h1>
+      <AppRouter />
     </>
   )
 }
