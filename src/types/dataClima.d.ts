@@ -1,80 +1,51 @@
-/* ===============================
-   Tipos base reutilizables
-================================ */
-
-export interface Condition {
+// DataClima.d.ts (ejemplo resumido)
+export interface WeatherCondition {
     text: string;
     icon: string;
+    code: number;
 }
-
-export interface Location {
-    name: string;
-    region: string;
-    country: string;
-    lat: number;
-    lon: number;
-    timezone: string;
-    localtime: string;
-}
-
-/* ===============================
-   Clima actual
-================================ */
 
 export interface CurrentWeather {
     temp_c: number;
     feelslike_c: number;
     humidity: number;
     wind_kph: number;
-    wind_dir: string;
     uv: number;
-    is_day: boolean;
-    condition: Condition;
-    last_updated: string;
+    is_day: number;
+    condition: WeatherCondition;
 }
 
-/* ===============================
-   Resumen del día
-================================ */
-
-export interface TodayWeather {
-    date: string;
-    max_temp_c: number;
-    min_temp_c: number;
-    avg_temp_c: number;
-    chance_of_rain: number;
-    condition: Condition;
-    sunrise: string;
-    sunset: string;
-}
-
-/* ===============================
-   Clima por hora
-================================ */
-
-export interface HourlyWeather {
+export interface ForecastHour {
     time: string;
     temp_c: number;
-    is_day: boolean;
-    condition: Condition;
-    wind_kph: number;
-    humidity: number;
-    chance_of_rain: number;
+    condition: WeatherCondition;
 }
 
-/* ===============================
-   Estructura principal
-================================ */
+export interface ForecastDay {
+    date: string;
+    day: {
+        maxtemp_c: number;
+        mintemp_c: number;
+        condition: WeatherCondition;
+    };
+}
 
 export interface WeatherData {
-    location: Location;
+    location: {
+        name: string;
+        country: string;
+        region: string;
+        lat: number;
+        lon: number;
+        tz_id: string;
+        localtime_epoch: number;
+    };
     current: CurrentWeather;
-    today: TodayWeather;
-    hourly: HourlyWeather[];
+    forecast: {
+        forecastday: {
+            hour: ForecastHour[];
+            day: ForecastDay["day"];
+            date: string;
+        }[];
+    };
 }
-
-/* ===============================
-   Respuesta completa
-================================ */
-
-export type WeatherResponse = WeatherData[];
