@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { WeatherData } from "../../types/dataClima";
+import ForecastDays from "../ClimasDays";
 
 interface HomeProps {
     data: WeatherData;
@@ -8,6 +9,8 @@ interface HomeProps {
 export default function ClimaLugarPage({ data }: HomeProps) {
     const { current, forecast } = data;
     const today = forecast.forecastday[0];
+
+    console.log({ forecast });
 
     return (
         <main className="w-full max-w-7xl mx-auto">
@@ -75,39 +78,9 @@ export default function ClimaLugarPage({ data }: HomeProps) {
             </section>
 
             {/* ===== Pronóstico por días ===== */}
+
             <section className="mt-10">
-                <h2 className="text-sm uppercase tracking-wide text-slate-400 mb-3">
-                    Pronóstico
-                </h2>
-
-                <div className="rounded-2xl bg-white/5 backdrop-blur ring-1 ring-white/10 divide-y divide-white/10">
-                    {forecast.forecastday.map((day, index) => (
-                        <motion.article
-                            key={day.date}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: index * 0.05 }}
-                            className="flex items-center justify-between px-4 py-3"
-                        >
-                            <time className="text-sm text-slate-300">
-                                {new Date(day.date).toLocaleDateString("es-ES", {
-                                    weekday: "long",
-                                })}
-                            </time>
-
-                            <img
-                                src={`https:${day.day.condition.icon}`}
-                                alt={day.day.condition.text}
-                                className="h-8 w-8"
-                            />
-
-                            <span className="text-sm text-slate-300">
-                                {Math.round(day.day.maxtemp_c)}° /{" "}
-                                {Math.round(day.day.mintemp_c)}°
-                            </span>
-                        </motion.article>
-                    ))}
-                </div>
+                <ForecastDays forecastday={data.forecast.forecastday} />
             </section>
         </main>
     );
