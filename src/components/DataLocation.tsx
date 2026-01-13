@@ -29,27 +29,12 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="
-        w-full
-        rounded-2xl
-        px-6
-        py-4
-        text-white
-        shadow-lg
-        ring-1
-        ring-white/10
-        backdrop-blur
-        border-b-2
-        border-slate-700 
-        mb-4
-        max-w-7xl
-        mx-auto
-      "
+            className=" w-full rounded-2xl px-6 py-4 text-white shadow-lg ring-1 ring-white/10 backdrop-blur border-b-2 border-slate-700  mb-4 max-w-7xl mx-auto"
         >
             {/* Fila superior */}
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3">
-                    <FaMapMarkerAlt className="h-5 w-5 text-blue-400" />
+                    <FaMapMarkerAlt className="size-5 text-blue-400" />
                     <h1 className="text-lg font-semibold">
                         {location.name}
                         <span className="text-slate-400 font-normal">
@@ -60,7 +45,7 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
                 </div>
 
                 <div className="flex items-center gap-2 text-sm text-slate-300">
-                    <FaClock className="h-4 w-4 text-blue-400" />
+                    <FaClock className="size-5 text-blue-400" />
                     <time>{localTime}</time>
                     <span className="text-slate-500">({location.tz_id})</span>
                 </div>
@@ -68,8 +53,8 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
 
             {/* Fila inferior */}
             <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-slate-400">
-                <div className="flex items-center gap-2">
-                    <FaGlobe className="h-4 w-4 text-blue-400" />
+                <div className="flex items-center gap-4">
+                    <FaGlobe className="size-5 text-blue-400" />
                     <span>
                         Lat {location.lat.toFixed(2)} · Lon {location.lon.toFixed(2)}
                     </span>
