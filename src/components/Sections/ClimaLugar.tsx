@@ -45,36 +45,47 @@ export default function ClimaLugarPage({ data }: HomeProps) {
             </section>
 
             {/* ===== Pronóstico por hora ===== */}
-            <section className="mt-10 no-scrollbar">
+            <section className="mt-10 no-scrollbar max-w-7xl mx-auto w-full">
                 <h2 className="text-sm uppercase tracking-wide text-slate-400 mb-3 text-center">
                     Pronóstico por hora
                 </h2>
 
-                <div className="flex gap-4 overflow-x-auto pb-2 items-center justify-center no-scrollbar">
-                    {today.hour.slice(0, 8).map((hour, index) => (
-                        <motion.article
-                            key={hour.time}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.05 }}
-                            className="min-w-[90px] rounded-2xl bg-white/5 backdrop-blur p-4 flex flex-col items-center gap-2 ring-1 ring-white/10"
-                        >
-                            <time className="text-xs text-slate-400">
-                                {hour.time.split(" ")[1]}
-                            </time>
+                <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative h-48 overflow-x-auto overflow-y-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950 max-w-4xl mx-auto scroll-estilado"
+                >
+                    <div className="timeline-scroll-inline animate-expand-horizontally sticky top-0 left-0 z-10 h-2 w-full origin-left bg-linear-to-r from-blue-500 to-blue-700"></div>
 
-                            <img
-                                src={`https:${hour.condition.icon}`}
-                                alt={hour.condition.text}
-                                className="h-8 w-8"
-                            />
+                    <div className="flex h-full w-5xl items-center gap-4 p-6">
+                        {today.hour.slice(0, 8).map((hour, index) => (
+                            <motion.article
+                                key={hour.time}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                className="min-w-[90px] rounded-2xl bg-white/5 backdrop-blur p-4 flex flex-col items-center gap-2 ring-1 ring-white/10"
+                            >
+                                <time className="text-xs text-slate-400">
+                                    {hour.time.split(" ")[1]}
+                                </time>
 
-                            <span className="text-sm font-semibold">
-                                {Math.round(hour.temp_c)}°
-                            </span>
-                        </motion.article>
-                    ))}
-                </div>
+                                <img
+                                    src={`https:${hour.condition.icon}`}
+                                    alt={hour.condition.text}
+                                    className="h-8 w-8"
+                                />
+
+                                <span className="text-sm font-semibold">
+                                    {Math.round(hour.temp_c)}°
+                                </span>
+                            </motion.article>
+                        ))}
+                    </div>
+
+                </motion.div>
             </section>
 
             {/* ===== Pronóstico por días ===== */}
