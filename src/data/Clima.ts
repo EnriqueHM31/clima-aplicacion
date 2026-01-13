@@ -73,6 +73,128 @@ export const InfoClima: WeatherData = {
                             code: 1009,
                         },
                     },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
+                ],
+            },
+            {
+                date: "2026-01-12",
+                day: {
+                    maxtemp_c: 18,
+                    mintemp_c: 10,
+                    condition: {
+                        text: "Nublado",
+                        icon: "//cdn.weatherapi.com/weather/64x64/day/122.png",
+                        code: 1009,
+                    },
+                },
+                hour: [
+                    {
+                        time: "2026-01-12 09:00",
+                        temp_c: 13,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/day/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 12:00",
+                        temp_c: 15,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/day/122.png",
+                            code: 1009,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 15:00",
+                        temp_c: 17,
+                        condition: {
+                            text: "Parcialmente nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                            code: 1003,
+                        },
+                    },
+                    {
+                        time: "2026-01-12 18:00",
+                        temp_c: 14,
+                        condition: {
+                            text: "Nublado",
+                            icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
+                            code: 1009,
+                        },
+                    },
                 ],
             },
         ],
