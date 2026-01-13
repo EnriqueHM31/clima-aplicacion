@@ -1,13 +1,16 @@
 // src/pages/ClimaLugar.tsx
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { obtenerClimaLugar } from "../services/Clima";
-import type { WeatherResponse } from "../types/dataClima";
+import LoaderGrid from "../components/Atomos/Loading";
+import LocationInfoBar from "../components/DataLocation";
+import ClimaLugarPage from "../components/Sections/ClimaLugar";
+import { InfoClima } from "../data/Clima";
+import { useClimaStore } from "../store/Clima";
 
 export default function LugarClima() {
     const { lugar } = useParams<{ lugar: string }>();
-    const [data, setData] = useState<WeatherResponse>();
     const [searchParams] = useSearchParams();
+    const { obtenerClima, dataClima } = useClimaStore();
 
     const days = Number(searchParams.get("days") ?? 1);
 
@@ -15,25 +18,27 @@ export default function LugarClima() {
         if (!lugar) return;
 
         const fetchData = async () => {
-            const data = await obtenerClimaLugar(lugar, days);
+            //const data = await obtenerClimaLugar(lugar, days);
+            const data = InfoClima;
             console.log({ data });
-            setData(data);
+            setTimeout(() => obtenerClima(data), 3000);
         };
 
         fetchData();
-    }, [lugar, days]);
+    }, [lugar, days, obtenerClima]);
 
 
-    console.log({ data });
+    console.log({ dataClima });
     return (
-        <section className="min-h-screen p-6 text-white">
-            <h1 className="text-3xl font-bold">
-                Clima en {lugar}
-            </h1>
+        <section className="w-full text-white ">
+            {
+                !dataClima ? <LoaderGrid /> :
+                    <main className="w-full ">
+                        <LocationInfoBar location={dataClima.location} />
+                        <ClimaLugarPage data={dataClima} />
+                    </main>
+            }
 
-            <p className="text-slate-400">
-                Pronóstico para {days} día(s)
-            </p>
         </section>
     );
 }
