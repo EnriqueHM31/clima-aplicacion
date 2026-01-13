@@ -11,3 +11,18 @@
     scrollbar-width: none;
     /* Firefox */
 }
+
+.scroll-estilado::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-estilado::-webkit-scrollbar-track {
+    background: black;
+}
+
+.scroll-estilado::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, rgba(5, 43, 114, 0.808), rgba(0, 77, 221, 0.993));
+    border-radius: 15px;
+    border: 4px solid black;
+    cursor: pointer;
+}
