@@ -9,7 +9,7 @@ interface BotonDayDayProps {
 }
 
 export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDayProps) {
-    const date = new Date(day.date).toLocaleDateString("es-ES", {
+    const date = new Date(`${day.date}T12:00:00`).toLocaleDateString("es-ES", {
         weekday: "long",
         day: "numeric",
         month: "long",
