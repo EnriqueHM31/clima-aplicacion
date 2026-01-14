@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { WeatherData } from "../types/dataClima";
+import type { WeatherData } from "../../types/dataClima";
 import ClimaDay from "./ClimaDay";
 
 interface ForecastDaysProps {
@@ -12,7 +12,7 @@ export default function ForecastDays({ forecastday }: ForecastDaysProps) {
     const handleCambiarDia = (index: number | null) => setOpenDay(index);
 
     return (
-        <section className="mt-10 max-w-4xl mx-auto">
+        <section className="mt-10 max-w-4xl mx-auto pb-8">
             <h2 className="text-sm capitalize tracking-wide text-slate-400 mb-4">
                 Pronóstico por días
             </h2>

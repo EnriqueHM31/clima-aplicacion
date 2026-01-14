@@ -1,4 +1,4 @@
-import type { WeatherData } from "../../types/dataClima";
+import type { WeatherData } from "../../../types/dataClima";
 import ForecastDays from "../ClimasDays";
 import ClimaActual from "./ClimaActual";
 import ClimaHorasDayActual from "./ClimaHorasDayActual";

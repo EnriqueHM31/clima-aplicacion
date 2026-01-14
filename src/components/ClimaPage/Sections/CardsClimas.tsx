@@ -1,5 +1,5 @@
-import CardClima from "../CardClima";
-import { InfoCardsClimas } from "../../data/cards";
+import CardClima from "../../Atomos/CardClima";
+import { InfoCardsClimas } from "../../../data/cards";
 
 
 export default function CardsClimas() {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import type { WeatherData } from "../../types/dataClima";
+import type { WeatherData } from "../../../types/dataClima";
 
 interface ClimaActualProps {
     current: WeatherData["current"];

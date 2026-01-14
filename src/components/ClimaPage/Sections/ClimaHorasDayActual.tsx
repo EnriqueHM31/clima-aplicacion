@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import type { WeatherData } from "../../types/dataClima";
-import ContenedorScrollAnimado from "../ContenedorScrollAnimado";
+import type { WeatherData } from "../../../types/dataClima";
+import ContenedorScrollAnimado from "../../Atomos/ContenedorScrollAnimado";
 
 interface ClimaHorasDayActualProps {
     today: WeatherData["forecast"]["forecastday"][0];

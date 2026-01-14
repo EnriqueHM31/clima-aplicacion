@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
-import type { WeatherData } from "../types/dataClima";
-import ContenedorScrollAnimado from "./ContenedorScrollAnimado";
-import BotonHeaderDay from "./BotonHeaderDay";
+import type { WeatherData } from "../../types/dataClima";
+import ContenedorScrollAnimado from "../Atomos/ContenedorScrollAnimado";
+import BotonHeaderDay from "./BotonDay";
 
 interface ClimaDayProps {
     day: WeatherData["forecast"]["forecastday"][0];

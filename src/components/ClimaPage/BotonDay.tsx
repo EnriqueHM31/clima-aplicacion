@@ -1,13 +1,13 @@
-import type { WeatherData } from "../types/dataClima";
+import type { WeatherData } from "../../types/dataClima";
 
-interface BotonHeaderDayProps {
+interface BotonDayDayProps {
     day: WeatherData["forecast"]["forecastday"][0];
     index: number;
     isOpen: boolean;
     cambiarDia: (index: number | null) => void;
 }
 
-export default function BotonHeaderDay({ day, index, isOpen, cambiarDia }: BotonHeaderDayProps) {
+export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDayProps) {
     return (
         <button
             onClick={() => cambiarDia(isOpen ? null : index)}

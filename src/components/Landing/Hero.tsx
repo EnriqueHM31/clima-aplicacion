@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import FormClima from "../FormClima";
+import FormClima from "../ClimaPage/FormClima";
 
 export default function Hero() {
     return (

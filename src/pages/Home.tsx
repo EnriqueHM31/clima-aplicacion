@@ -1,6 +1,6 @@
 import Hero from "../components/Landing/Hero";
 import NavBar from "../components/Landing/NavBar";
-import CardsClimas from "../components/Sections/CardsClimas";
+import CardsClimas from "../components/ClimaPage/Sections/CardsClimas";
 export default function HomePage() {
 
     return (
