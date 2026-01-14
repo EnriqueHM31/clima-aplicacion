@@ -15,7 +15,11 @@ export const useClimaStore = create<ClimaState>((set) => ({
     dataClima: null,
     ciudad: "",
     dias: 1,
-    handleChangeCiudad: (ciudad) => set({ ciudad }),
-    handleChangeDias: (dias) => set({ dias }),
+    handleChangeCiudad: (ciudad) => {
+        set({ ciudad })
+    },
+    handleChangeDias: (dias) => {
+        set({ dias })
+    },
     obtenerClima: (dataClima) => set({ dataClima }),
 }));
