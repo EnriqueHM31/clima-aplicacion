@@ -8,18 +8,19 @@ interface BotonDayDayProps {
 }
 
 export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDayProps) {
+    const date = new Date(day.date).toLocaleDateString("es-ES", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+    });
     return (
         <button
             onClick={() => cambiarDia(isOpen ? null : index)}
             className="w-full flex items-center justify-between px-4 py-4 text-left hover:bg-white/5 transition cursor-pointer"
         >
             <div>
-                <p className="text-sm font-medium text-white">
-                    {new Date(day.date).toLocaleDateString("es-ES", {
-                        weekday: "long",
-                        day: "numeric",
-                        month: "short",
-                    })}
+                <p className="text-sm font-medium text-white capitalize">
+                    <span>{date}</span>
                 </p>
                 <p className="text-xs text-slate-400">
                     {day.day.condition.text}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useClimaStore } from "../store/Clima";
+import { useClimaStore } from "../../store/Clima";
 
 export default function FormClima() {
     const { ciudad, handleChangeCiudad } = useClimaStore();
