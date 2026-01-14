@@ -5,10 +5,10 @@ import type { ClimaHorasDayActualProps } from "../../../types/dataClima.d";
 export default function ClimaHorasDayActual({ today }: ClimaHorasDayActualProps) {
     return (
         <section className="no-scrollbar mx-auto mt-10 w-full">
-            <h2 className="mb-3 text-center text-sm tracking-wide text-slate-400 capitalize">Pronóstico por hora</h2>
+            <h2 className="mb-3 text-center text-sm tracking-wide text-slate-400 capitalize">Pronóstico por hora de Hoy</h2>
 
             <ContenedorScrollAnimado>
-                {today.hour.slice(0, 8).map((hour, index) => (
+                {today.hour.map((hour, index) => (
                     <motion.article
                         key={hour.time}
                         initial={{ opacity: 0, y: 20 }}

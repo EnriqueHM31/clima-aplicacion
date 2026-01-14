@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import type { WeatherData } from "../types/dataClima";
 import { obtenerClimaLugar } from "../services/Clima";
+import type { WeatherData } from "../types/dataClima";
 
 interface ClimaState {
     dataClima: WeatherData | null;
@@ -10,7 +10,9 @@ interface ClimaState {
     handleChangeDias: (dias: number) => void;
     obtenerClimaLugar: (ciudad: string, dias: number) => void;
     reset: () => void;
+    crearNewUrl: ({ ciudad, dias }: { ciudad: string, dias: number }) => string;
 }
+
 
 
 export const useClimaStore = create<ClimaState>((set) => ({
@@ -37,4 +39,10 @@ export const useClimaStore = create<ClimaState>((set) => ({
             dias: 0,
             dataClima: null,
         }),
+    crearNewUrl: ({ ciudad, dias }: { ciudad: string, dias: number }) => {
+        const params = new URLSearchParams();
+        params.set("days", String(dias));
+        if (dias === 0) return `/${ciudad}`;
+        return `/${ciudad}?${params.toString()}`;
+    }
 }));
