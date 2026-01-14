@@ -6,6 +6,7 @@ export const traductor = (texto: string) => {
         "patchy rain nearby": "Lluvia parcial cerca",
         "sunny": "Soleado",
         "mist": "Niebla",
+        "overcast": "Nublado",
     };
 
     console.log({ texto });

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import type { WeatherData } from "../types/dataClima";
+import { obtenerClimaLugar } from "../services/Clima";
 
 interface ClimaState {
     dataClima: WeatherData | null;
@@ -7,7 +8,7 @@ interface ClimaState {
     dias: number;
     handleChangeCiudad: (ciudad: string) => void;
     handleChangeDias: (dias: number) => void;
-    obtenerClima: (dataClima: WeatherData) => void;
+    obtenerClimaLugar: (ciudad: string, dias: number) => void;
 }
 
 
@@ -21,5 +22,12 @@ export const useClimaStore = create<ClimaState>((set) => ({
     handleChangeDias: (dias) => {
         set({ dias })
     },
-    obtenerClima: (dataClima) => set({ dataClima }),
+    obtenerClimaLugar: async (ciudad, dias) => {
+        try {
+            const response = await obtenerClimaLugar(ciudad, dias);
+            set({ dataClima: response });
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }));
