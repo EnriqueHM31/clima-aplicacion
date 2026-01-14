@@ -8,7 +8,7 @@ interface ClimaActualProps {
 
 export default function ClimaActual({ current }: ClimaActualProps) {
     return (
-        <section className="max-w-md mx-auto text-center">
+        <section className="max-w-full mx-auto text-center">
 
             <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}

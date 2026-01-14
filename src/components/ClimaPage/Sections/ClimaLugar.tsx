@@ -11,7 +11,7 @@ export default function ClimaLugarPage({ data }: HomeProps) {
     const { current, forecast } = data;
 
     return (
-        <main className="w-full max-w-7xl mx-auto">
+        <main className="w-full max-w-6xl mx-auto ">
             {/* ===== Clima actual ===== */}
             <ClimaActual current={current} />
 
