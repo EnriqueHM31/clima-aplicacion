@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import FormClima from "../ClimaPage/FormClima";
+import SearchClima from "../Atomos/Search";
 
 export default function Hero() {
     return (
@@ -26,7 +26,10 @@ export default function Hero() {
             </motion.p>
 
             {/* Formulario */}
-            <FormClima />
+            <div className="flex flex-col gap-4 sm:flex-row items-center justify-center mt-5">
+
+                <SearchClima />
+            </div>
 
         </div>
     );
