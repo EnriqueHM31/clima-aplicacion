@@ -3,18 +3,14 @@ import { useClimaStore } from "../../store/Clima";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchClima() {
-    const { ciudad, dias, handleChangeCiudad, handleChangeDias } = useClimaStore();
+    const { ciudad, dias, handleChangeCiudad, handleChangeDias, crearNewUrl, reset } = useClimaStore();
     const navigate = useNavigate();
 
     const handleNavigate = (e: React.FormEvent) => {
         e.preventDefault();
-
-        const params = new URLSearchParams();
-        params.set("days", String(dias));
-
-        navigate(`/${ciudad}?${params.toString()}`);
-        handleChangeCiudad("");
-        handleChangeDias(0);
+        const UrlNew = crearNewUrl({ ciudad, dias });
+        navigate(UrlNew);
+        reset();
     };
 
     const OptionsSelect = Array.from({ length: 11 });
@@ -34,7 +30,7 @@ export default function SearchClima() {
             <input
                 type="text"
                 placeholder="Ej. Ciudad de México"
-                value={ciudad}
+                id="ciudad"
                 onChange={(e) => handleChangeCiudad(e.target.value)}
                 className="w-full rounded-xl bg-white/10 px-5 py-2 text-white ring-1 ring-white/10 backdrop-blur outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 sm:w-72"
                 defaultValue={ciudad}
@@ -44,6 +40,7 @@ export default function SearchClima() {
             <div className="relative w-full sm:w-50">
                 <select
                     value={dias}
+                    id="dias"
                     onChange={(e) => handleChangeDias(Number(e.target.value))}
                     className="peer w-full cursor-pointer appearance-none rounded-xl bg-white/10 px-4 py-2 pr-10 text-white ring-1 ring-white/10 backdrop-blur transition outline-none hover:ring-blue-500 focus:ring-2 focus:ring-blue-500"
                 >
@@ -51,7 +48,7 @@ export default function SearchClima() {
                         Hoy
                     </option>
 
-                    <option className="bg-slate-900 text-white" value={2}>
+                    <option className="bg-slate-900 text-white" value={1}>
                         Mañana
                     </option>
 
