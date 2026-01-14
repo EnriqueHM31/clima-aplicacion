@@ -1,9 +1,24 @@
 import { motion } from "framer-motion";
 import { useClimaStore } from "../../store/Clima";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SearchClima() {
-    const { ciudad, dias, handleChangeCiudad, handleChangeDias, obtenerClimaLugar } = useClimaStore();
+    const { ciudad, dias, handleChangeCiudad, handleChangeDias } = useClimaStore();
+    const navigate = useNavigate();
+
+    const handleNavigate = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const params = new URLSearchParams();
+        params.set("days", String(dias));
+
+        navigate(`/${ciudad}?${params.toString()}`);
+        handleChangeCiudad("");
+        handleChangeDias(0);
+    };
+
+    const OptionsSelect = Array.from({ length: 11 })
 
     return (
         <motion.form
@@ -12,7 +27,7 @@ export default function SearchClima() {
             transition={{ duration: 0.4 }}
             onSubmit={(e) => {
                 e.preventDefault();
-                obtenerClimaLugar(ciudad, dias);
+                handleNavigate(e);
             }}
             className="
          
@@ -76,10 +91,10 @@ export default function SearchClima() {
                         Mañana
                     </option>
 
-                    {Array.from({ length: 9 }, (_, i) => (
+                    {OptionsSelect.slice(2).map((_, i) => (
                         <option
-                            key={i + 3}
-                            value={i + 3}
+                            key={i + 2}
+                            value={i + 2}
                             className="bg-slate-900 text-white"
                         >
                             Próximos {i + 2} días
