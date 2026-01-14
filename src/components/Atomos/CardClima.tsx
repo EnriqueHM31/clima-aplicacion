@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
 import type { CardClimaProps } from "../../types/componentes.d";
 
-export default function CardClima({
-    ciudad,
-    hora,
-    temperatura,
-    viento,
-    humedad,
-    icono,
-}: CardClimaProps) {
+export default function CardClima({ ciudad, hora, temperatura, viento, humedad, icono }: CardClimaProps) {
     return (
         <motion.section
             className="flex w-full justify-center px-4"
@@ -23,9 +16,7 @@ export default function CardClima({
             >
                 {/* Header */}
                 <header className="flex items-center justify-between">
-                    <h2 className="text-sm font-medium text-blue-400">
-                        {ciudad}
-                    </h2>
+                    <h2 className="text-sm font-medium text-blue-400">{ciudad}</h2>
                     <time className="text-sm text-slate-400">{hora}</time>
                 </header>
 
@@ -49,21 +40,11 @@ export default function CardClima({
 
                 {/* Detalles */}
                 <footer className="mt-6 flex justify-between text-sm text-slate-300">
-                    <motion.p
-                        className="flex items-center gap-2"
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4 }}
-                    >
+                    <motion.p className="flex items-center gap-2" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
                         🌬 <span>{viento}</span>
                     </motion.p>
 
-                    <motion.p
-                        className="flex items-center gap-2"
-                        initial={{ opacity: 0, x: 10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4 }}
-                    >
+                    <motion.p className="flex items-center gap-2" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
                         💧 <span>{humedad}</span>
                     </motion.p>
                 </footer>
