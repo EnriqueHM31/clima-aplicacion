@@ -5,13 +5,12 @@ import LoaderGrid from "../components/Atomos/Loading";
 import LocationInfoBar from "../components/ClimaPage/DataLocation";
 import ClimaLugarPage from "../components/ClimaPage/Sections/ClimaLugar";
 //import { obtenerClimaLugar } from "../services/Clima";
-import { useClimaStore } from "../store/Clima";
-import { InfoClima } from "../data/Clima";
 import SearchClima from "../components/Atomos/Search";
+import { useClimaStore } from "../store/Clima";
 
 export default function LugarClima() {
     const [searchParams] = useSearchParams();
-    const { obtenerClima, dataClima, handleChangeDias, handleChangeCiudad } = useClimaStore();
+    const { dataClima, handleChangeDias, handleChangeCiudad, obtenerClimaLugar } = useClimaStore();
 
     const { lugar } = useParams<{ lugar: string }>();
     useEffect(() => {
@@ -23,23 +22,22 @@ export default function LugarClima() {
 
         const fetchData = async () => {
             //const data = await obtenerClimaLugar(lugar, days);
-            const data = InfoClima;
-            console.log({ data });
-            setTimeout(() => obtenerClima(data), 2000);
+            obtenerClimaLugar(lugar, days);
+
         };
 
         fetchData();
-    }, [lugar, obtenerClima, handleChangeDias, searchParams, handleChangeCiudad]);
+    }, [lugar, handleChangeDias, searchParams, handleChangeCiudad, obtenerClimaLugar]);
 
     return (
         <section className="w-full text-white">
             {
                 !dataClima ? <LoaderGrid /> :
                     <main className="w-full ">
-                        <LocationInfoBar location={dataClima.location} />
-                        <div className="my5 flex flex-col gap-4 justify-end items-end max-w-7xl mx-auto">
+                        <div className="my-5 flex flex-col gap-4 justify-end items-end max-w-6xl mx-auto mb-5">
                             <SearchClima />
                         </div>
+                        <LocationInfoBar location={dataClima.location} />
                         <ClimaLugarPage data={dataClima} />
                     </main>
             }
