@@ -1,4 +1,13 @@
-// DataClima.d.ts (ejemplo resumido)
+export interface Location {
+    name: string;
+    country: string;
+    region: string;
+    lat: number;
+    lon: number;
+    tz_id: string;
+    localtime_epoch: number;
+}
+
 export interface WeatherCondition {
     text: string;
     icon: string;
@@ -48,4 +57,16 @@ export interface WeatherData {
             date: string;
         }[];
     };
+}
+
+export interface ClimaActualProps {
+    current: WeatherData["current"];
+}
+
+export interface ClimaHorasDayActualProps {
+    today: WeatherData["forecast"]["forecastday"][0];
+}
+
+export interface ForecastDaysProps {
+    forecastday: WeatherData["forecast"]["forecastday"];
 }

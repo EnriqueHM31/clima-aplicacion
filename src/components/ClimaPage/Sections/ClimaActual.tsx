@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
-import type { WeatherData } from "../../../types/dataClima";
+import type { ClimaActualProps } from "../../../types/dataClima.d";
 import { traductor } from "../../../utils/traductor";
-
-interface ClimaActualProps {
-    current: WeatherData["current"];
-}
 
 export default function ClimaActual({ current }: ClimaActualProps) {
     return (
@@ -15,24 +11,15 @@ export default function ClimaActual({ current }: ClimaActualProps) {
                 transition={{ delay: 0.1 }}
                 className="mt-4 flex items-center justify-center gap-4"
             >
-                <span className="text-7xl font-bold">
-                    {Math.round(current.temp_c)}°
-                </span>
+                <span className="text-7xl font-bold">{Math.round(current.temp_c)}°</span>
 
-                <img
-                    src={`https:${current.condition.icon}`}
-                    alt={current.condition.text}
-                    className="h-20 w-20"
-                />
+                <img src={`https:${current.condition.icon}`} alt={current.condition.text} className="h-20 w-20" />
             </motion.div>
 
-            <p className="mt-2 text-slate-300">
-                {traductor(current.condition.text.toLowerCase().trim())}
-            </p>
+            <p className="mt-2 text-slate-300">{traductor(current.condition.text.toLowerCase().trim())}</p>
 
             <p className="text-sm text-slate-400">
-                Sensación térmica {current.feelslike_c}° · Humedad{" "}
-                {current.humidity}%
+                Sensación térmica {current.feelslike_c}° · Humedad {current.humidity}%
             </p>
         </section>
     );

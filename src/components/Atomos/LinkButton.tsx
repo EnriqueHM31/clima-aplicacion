@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import type { MotionVariant } from "../../types";
-
-interface PropsLinkButton {
-    text: string;
-    icon: React.ReactNode;
-    variants: MotionVariant;
-}
+import type { PropsLinkButton } from "../../types/componentes.d";
 
 export default function LinkButton({ text, icon, variants }: PropsLinkButton) {
     return (

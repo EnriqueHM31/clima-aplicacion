@@ -3,8 +3,7 @@ import { useClimaStore } from "../../store/Clima";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchClima() {
-    const { ciudad, dias, handleChangeCiudad, handleChangeDias } =
-        useClimaStore();
+    const { ciudad, dias, handleChangeCiudad, handleChangeDias } = useClimaStore();
     const navigate = useNavigate();
 
     const handleNavigate = (e: React.FormEvent) => {
@@ -57,11 +56,7 @@ export default function SearchClima() {
                     </option>
 
                     {OptionsSelect.slice(2).map((_, i) => (
-                        <option
-                            key={i + 2}
-                            value={i + 2}
-                            className="bg-slate-900 text-white"
-                        >
+                        <option key={i + 2} value={i + 2} className="bg-slate-900 text-white">
                             Próximos {i + 2} días
                         </option>
                     ))}
@@ -75,11 +70,7 @@ export default function SearchClima() {
                     stroke="currentColor"
                     strokeWidth={2}
                 >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
             </div>
 

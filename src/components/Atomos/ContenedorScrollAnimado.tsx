@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
-
-interface ContenedorScrollAnimadoProps {
-    children: React.ReactNode;
-}
+import type { ContenedorScrollAnimadoProps } from "../../types/componentes.d";
 
 export default function ContenedorScrollAnimado({
     children,

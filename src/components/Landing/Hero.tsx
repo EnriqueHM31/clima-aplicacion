@@ -21,8 +21,7 @@ export default function Hero() {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="mt-4 text-base text-slate-300 sm:text-lg"
             >
-                Ingresa una ciudad y obtén el pronóstico actualizado al
-                instante.
+                Ingresa una ciudad y obtén el pronóstico actualizado al instante.
             </motion.p>
 
             {/* Formulario */}

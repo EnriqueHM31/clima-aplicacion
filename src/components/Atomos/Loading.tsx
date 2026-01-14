@@ -1,11 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-type Easing =
-    | "linear"
-    | "easeIn"
-    | "easeOut"
-    | "easeInOut"
-    | number[]
-    | ((v: number) => number);
+import type { Easing } from "../../types/animaciones.d";
 
 const containerVariants = {
     animate: {

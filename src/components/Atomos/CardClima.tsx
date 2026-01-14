@@ -1,14 +1,5 @@
-import type { ReactNode } from "react";
 import { motion } from "framer-motion";
-
-interface CardClimaProps {
-    ciudad: string;
-    hora: string;
-    temperatura: number;
-    viento: string;
-    humedad: string;
-    icono: ReactNode;
-}
+import type { CardClimaProps } from "../../types/componentes.d";
 
 export default function CardClima({
     ciudad,

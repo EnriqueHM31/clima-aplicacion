@@ -1,24 +1,9 @@
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaClock, FaGlobe } from "react-icons/fa";
-
-interface Location {
-    name: string;
-    country: string;
-    region: string;
-    lat: number;
-    lon: number;
-    tz_id: string;
-    localtime_epoch: number;
-}
-
-interface LocationInfoBarProps {
-    location: Location;
-}
+import type { LocationInfoBarProps } from "../../types/componentes.d";
 
 export default function LocationInfoBar({ location }: LocationInfoBarProps) {
-    const localTime = new Date(
-        location.localtime_epoch * 1000
-    ).toLocaleTimeString("en-US", {
+    const localTime = new Date(location.localtime_epoch * 1000).toLocaleTimeString("en-US", {
         hour: "2-digit",
         minute: "2-digit",
     });
@@ -55,8 +40,7 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
                 <div className="flex items-center gap-4">
                     <FaGlobe className="size-5 text-blue-400" />
                     <span>
-                        Lat {location.lat.toFixed(2)} · Lon{" "}
-                        {location.lon.toFixed(2)}
+                        Lat {location.lat.toFixed(2)} · Lon {location.lon.toFixed(2)}
                     </span>
                 </div>
             </div>

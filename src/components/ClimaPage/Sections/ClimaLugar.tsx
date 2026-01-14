@@ -1,11 +1,7 @@
-import type { WeatherData } from "../../../types/dataClima";
+import type { HomeProps } from "../../../types/componentes.d";
 import ForecastDays from "../ClimasDays";
 import ClimaActual from "./ClimaActual";
 import ClimaHorasDayActual from "./ClimaHorasDayActual";
-
-interface HomeProps {
-    data: WeatherData;
-}
 
 export default function ClimaLugarPage({ data }: HomeProps) {
     const { current, forecast } = data;

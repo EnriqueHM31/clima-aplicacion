@@ -26,11 +26,7 @@ export default function NavBar() {
                     Aplicacion del clima
                 </motion.h1>
             </Link>
-            <LinkButton
-                text="Portafolio de proyectos HM"
-                icon={<FaGithub />}
-                variants={buttonNavBarVariants}
-            />
+            <LinkButton text="Portafolio de proyectos HM" icon={<FaGithub />} variants={buttonNavBarVariants} />
         </nav>
     );
 }
