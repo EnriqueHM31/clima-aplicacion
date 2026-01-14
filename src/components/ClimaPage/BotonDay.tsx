@@ -1,4 +1,5 @@
 import type { WeatherData } from "../../types/dataClima";
+import { traductor } from "../../utils/traductor";
 
 interface BotonDayDayProps {
     day: WeatherData["forecast"]["forecastday"][0];
@@ -23,7 +24,7 @@ export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDay
                     <span>{date}</span>
                 </p>
                 <p className="text-xs text-slate-400">
-                    {day.day.condition.text}
+                    {traductor(day.day.condition.text.toLowerCase().trim())}
                 </p>
             </div>
 
