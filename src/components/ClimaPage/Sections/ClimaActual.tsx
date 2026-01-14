@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { WeatherData } from "../../../types/dataClima";
+import { traductor } from "../../../utils/traductor";
 
 interface ClimaActualProps {
     current: WeatherData["current"];
@@ -27,7 +28,7 @@ export default function ClimaActual({ current }: ClimaActualProps) {
             </motion.div>
 
             <p className="mt-2 text-slate-300">
-                {current.condition.text}
+                {traductor(current.condition.text.toLowerCase().trim())}
             </p>
 
             <p className="text-sm text-slate-400">
