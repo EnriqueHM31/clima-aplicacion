@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useClimaStore } from "../../store/Clima";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export default function SearchClima() {
     const { ciudad, dias, handleChangeCiudad, handleChangeDias, crearNewUrl, reset } = useClimaStore();
@@ -8,6 +9,11 @@ export default function SearchClima() {
 
     const handleNavigate = (e: React.FormEvent) => {
         e.preventDefault();
+        if (ciudad === "") {
+            reset();
+            toast.error("Error: Ingresa una ciudad");
+            return;
+        }
         const UrlNew = crearNewUrl({ ciudad, dias });
         navigate(UrlNew);
         reset();
@@ -33,7 +39,7 @@ export default function SearchClima() {
                 id="ciudad"
                 onChange={(e) => handleChangeCiudad(e.target.value)}
                 className="w-full rounded-xl bg-white/10 px-5 py-2 text-white ring-1 ring-white/10 backdrop-blur outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 sm:w-72"
-                defaultValue={ciudad}
+                value={ciudad}
             />
 
             {/* ===== Días ===== */}
