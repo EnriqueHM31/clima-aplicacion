@@ -1,4 +1,4 @@
-import Hero from "../components/Landing/Hero";
+import Hero from "../components/Home/Hero";
 import NavBar from "../components/Landing/NavBar";
 import CardsClimas from "../components/ClimaPage/Sections/CardsClimas";
 import { useEffect } from "react";
@@ -13,13 +13,13 @@ export default function HomePage() {
     return (
         <>
             <NavBar />
-            <main className="flex flex-col items-center justify-center min-h-[80dvh] h-full">
-                <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 gap-10" >
+            <main className="flex h-full min-h-[80dvh] flex-col items-center justify-center">
+                <div className="relative z-10 flex h-full flex-col items-center justify-center gap-10 px-6">
                     <Hero />
 
                     <CardsClimas />
                 </div>
             </main>
         </>
-    )
+    );
 }
