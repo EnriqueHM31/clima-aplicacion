@@ -9,7 +9,7 @@ interface ClimaHorasDayActualProps {
 export default function ClimaHorasDayActual({ today }: ClimaHorasDayActualProps) {
     return (
         <section className="mt-10 no-scrollbar  mx-auto w-full">
-            <h2 className="text-sm  tracking-wide text-slate-400 mb-3 text-center capitalize">
+            <h2 className="text-sm tracking-wide text-slate-400 mb-3 text-center capitalize">
                 Pronóstico por hora
             </h2>
 

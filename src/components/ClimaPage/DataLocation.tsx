@@ -29,7 +29,7 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className=" w-full rounded-2xl px-6 py-4 text-white shadow-lg ring-1 ring-white/10 backdrop-blur border-b-2 border-slate-700  mb-4 max-w-6xl mx-auto"
+            className=" w-full rounded-2xl px-6 py-4 text-white shadow-lg ring-1 ring-white/10 backdrop-blur border-b-2 border-slate-700  mb-4 max-w-4xl mx-auto"
         >
             {/* Fila superior */}
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">

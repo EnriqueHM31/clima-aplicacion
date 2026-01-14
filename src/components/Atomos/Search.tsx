@@ -36,7 +36,7 @@ export default function SearchClima() {
         items-center
         justify-center
         max-w-4xl
-        w-fit
+        w-full
       "
         >
             {/* ===== Ciudad ===== */}
