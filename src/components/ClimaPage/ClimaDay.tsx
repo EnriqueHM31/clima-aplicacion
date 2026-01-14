@@ -10,11 +10,16 @@ interface ClimaDayProps {
     handleCambiarDia: (index: number | null) => void;
 }
 
-export default function ClimaDay({ day, index, isOpen, handleCambiarDia }: ClimaDayProps) {
+export default function ClimaDay({
+    day,
+    index,
+    isOpen,
+    handleCambiarDia,
+}: ClimaDayProps) {
     return (
         <article
             key={day.date}
-            className="rounded-2xl bg-white/5 backdrop-blur ring-1 ring-white/10 overflow-hidden"
+            className="overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur"
         >
             {/* ===== HEADER (DÍA) ===== */}
             <BotonHeaderDay
@@ -31,7 +36,7 @@ export default function ClimaDay({ day, index, isOpen, handleCambiarDia }: Clima
                         {day.hour.map((hour) => (
                             <div
                                 key={hour.time}
-                                className=" min-w-[90px] rounded-xl bg-black/40 p-3 flex flex-col items-center gap-2 ring-1 ring-white/10"
+                                className="flex min-w-[90px] flex-col items-center gap-2 rounded-xl bg-black/40 p-3 ring-1 ring-white/10"
                             >
                                 <time className="text-xs text-slate-400">
                                     {hour.time.split(" ")[1]}
@@ -52,5 +57,5 @@ export default function ClimaDay({ day, index, isOpen, handleCambiarDia }: Clima
                 )}
             </AnimatePresence>
         </article>
-    )
+    );
 }

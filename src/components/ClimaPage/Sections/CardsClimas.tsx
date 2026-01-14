@@ -1,10 +1,9 @@
 import CardClima from "../../Atomos/CardClima";
 import { InfoCardsClimas } from "../../../data/cards";
 
-
 export default function CardsClimas() {
     return (
-        <section className="flex items-center md:flex-row flex-col justify-center gap-5">
+        <section className="flex flex-col items-center justify-center gap-5 md:flex-row">
             {InfoCardsClimas.map((infoCardClima) => (
                 <CardClima
                     key={infoCardClima.ciudad}
@@ -17,5 +16,5 @@ export default function CardsClimas() {
                 />
             ))}
         </section>
-    )
+    );
 }

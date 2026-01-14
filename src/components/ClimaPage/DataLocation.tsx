@@ -16,20 +16,19 @@ interface LocationInfoBarProps {
 }
 
 export default function LocationInfoBar({ location }: LocationInfoBarProps) {
-    const localTime = new Date(location.localtime_epoch * 1000).toLocaleTimeString(
-        "en-US",
-        {
-            hour: "2-digit",
-            minute: "2-digit",
-        }
-    );
+    const localTime = new Date(
+        location.localtime_epoch * 1000
+    ).toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+    });
 
     return (
         <motion.section
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className=" w-full rounded-2xl px-6 py-4 text-white shadow-lg ring-1 ring-white/10 backdrop-blur border-b-2 border-slate-700  mb-4 max-w-4xl mx-auto"
+            className="mx-auto mb-4 w-full max-w-4xl rounded-2xl border-b-2 border-slate-700 px-6 py-4 text-white shadow-lg ring-1 ring-white/10 backdrop-blur"
         >
             {/* Fila superior */}
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -37,7 +36,7 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
                     <FaMapMarkerAlt className="size-5 text-blue-400" />
                     <h1 className="text-lg font-semibold">
                         {location.name}
-                        <span className="text-slate-400 font-normal">
+                        <span className="font-normal text-slate-400">
                             {" "}
                             · {location.region}, {location.country}
                         </span>
@@ -56,7 +55,8 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
                 <div className="flex items-center gap-4">
                     <FaGlobe className="size-5 text-blue-400" />
                     <span>
-                        Lat {location.lat.toFixed(2)} · Lon {location.lon.toFixed(2)}
+                        Lat {location.lat.toFixed(2)} · Lon{" "}
+                        {location.lon.toFixed(2)}
                     </span>
                 </div>
             </div>

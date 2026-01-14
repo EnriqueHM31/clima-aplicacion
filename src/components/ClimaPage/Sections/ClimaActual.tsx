@@ -8,13 +8,12 @@ interface ClimaActualProps {
 
 export default function ClimaActual({ current }: ClimaActualProps) {
     return (
-        <section className="max-w-full mx-auto text-center">
-
+        <section className="mx-auto max-w-full text-center">
             <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.1 }}
-                className="flex justify-center items-center gap-4 mt-4"
+                className="mt-4 flex items-center justify-center gap-4"
             >
                 <span className="text-7xl font-bold">
                     {Math.round(current.temp_c)}°
@@ -32,8 +31,9 @@ export default function ClimaActual({ current }: ClimaActualProps) {
             </p>
 
             <p className="text-sm text-slate-400">
-                Sensación térmica {current.feelslike_c}° · Humedad {current.humidity}%
+                Sensación térmica {current.feelslike_c}° · Humedad{" "}
+                {current.humidity}%
             </p>
         </section>
-    )
+    );
 }

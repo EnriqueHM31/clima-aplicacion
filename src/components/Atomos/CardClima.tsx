@@ -10,30 +10,23 @@ interface CardClimaProps {
     icono: ReactNode;
 }
 
-export default function CardClima({ ciudad, hora, temperatura, viento, humedad, icono }: CardClimaProps) {
+export default function CardClima({
+    ciudad,
+    hora,
+    temperatura,
+    viento,
+    humedad,
+    icono,
+}: CardClimaProps) {
     return (
         <motion.section
-            className="flex justify-center w-full px-4"
+            className="flex w-full justify-center px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
             <motion.article
-                className="
-          w-full
-          max-w-xl
-          rounded-2xl
-          bg-linear-to-b
-          from-black
-          via-slate-900
-          to-blue-950
-          p-6
-          text-white
-          shadow-xl
-          ring-1
-          ring-white/10
-          backdrop-blur
-        "
+                className="w-full max-w-xl rounded-2xl bg-linear-to-b from-black via-slate-900 to-blue-950 p-6 text-white shadow-xl ring-1 ring-white/10 backdrop-blur"
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
             >
@@ -42,21 +35,17 @@ export default function CardClima({ ciudad, hora, temperatura, viento, humedad, 
                     <h2 className="text-sm font-medium text-blue-400">
                         {ciudad}
                     </h2>
-                    <time className="text-sm text-slate-400">
-                        {hora}
-                    </time>
+                    <time className="text-sm text-slate-400">{hora}</time>
                 </header>
 
                 {/* Contenido principal */}
                 <motion.main
-                    className="mt-6 flex justify-center items-center text-blue-400 gap-4"
+                    className="mt-6 flex items-center justify-center gap-4 text-blue-400"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                 >
-                    <div className="h-24 w-24">
-                        {icono}
-                    </div>
+                    <div className="h-24 w-24">{icono}</div>
                     <motion.p
                         className="text-6xl font-bold tracking-tight text-white"
                         initial={{ scale: 0.9 }}

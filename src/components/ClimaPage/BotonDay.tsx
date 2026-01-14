@@ -8,7 +8,12 @@ interface BotonDayDayProps {
     cambiarDia: (index: number | null) => void;
 }
 
-export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDayProps) {
+export default function BotonDay({
+    day,
+    index,
+    isOpen,
+    cambiarDia,
+}: BotonDayDayProps) {
     const date = new Date(`${day.date}T12:00:00`).toLocaleDateString("es-ES", {
         weekday: "long",
         day: "numeric",
@@ -17,7 +22,7 @@ export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDay
     return (
         <button
             onClick={() => cambiarDia(isOpen ? null : index)}
-            className="w-full flex items-center justify-between px-4 py-4 text-left hover:bg-white/5 transition cursor-pointer"
+            className="flex w-full cursor-pointer items-center justify-between px-4 py-4 text-left transition hover:bg-white/5"
         >
             <div>
                 <p className="text-sm font-medium text-white capitalize">
@@ -40,5 +45,5 @@ export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDay
                 </span>
             </div>
         </button>
-    )
+    );
 }

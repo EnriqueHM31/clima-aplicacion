@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { useClimaStore } from "../../store/Clima";
 import { useNavigate } from "react-router-dom";
 
-
 export default function SearchClima() {
-    const { ciudad, dias, handleChangeCiudad, handleChangeDias } = useClimaStore();
+    const { ciudad, dias, handleChangeCiudad, handleChangeDias } =
+        useClimaStore();
     const navigate = useNavigate();
 
     const handleNavigate = (e: React.FormEvent) => {
@@ -18,7 +18,7 @@ export default function SearchClima() {
         handleChangeDias(0);
     };
 
-    const OptionsSelect = Array.from({ length: 11 })
+    const OptionsSelect = Array.from({ length: 11 });
 
     return (
         <motion.form
@@ -29,15 +29,7 @@ export default function SearchClima() {
                 e.preventDefault();
                 handleNavigate(e);
             }}
-            className="
-         
-        flex flex-col gap-4
-        sm:flex-row
-        items-center
-        justify-center
-        max-w-4xl
-        w-full
-      "
+            className="flex w-full max-w-4xl flex-col items-center justify-center gap-4 sm:flex-row"
         >
             {/* ===== Ciudad ===== */}
             <input
@@ -45,18 +37,7 @@ export default function SearchClima() {
                 placeholder="Ej. Ciudad de México"
                 value={ciudad}
                 onChange={(e) => handleChangeCiudad(e.target.value)}
-                className="
-          w-full sm:w-72
-          rounded-xl
-          bg-white/10
-          px-5 py-2
-          text-white
-          placeholder:text-slate-400
-          outline-none
-          ring-1 ring-white/10
-          focus:ring-2 focus:ring-blue-500
-          backdrop-blur
-        "
+                className="w-full rounded-xl bg-white/10 px-5 py-2 text-white ring-1 ring-white/10 backdrop-blur outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 sm:w-72"
                 defaultValue={ciudad}
             />
 
@@ -65,23 +46,7 @@ export default function SearchClima() {
                 <select
                     value={dias}
                     onChange={(e) => handleChangeDias(Number(e.target.value))}
-                    className="
-      peer
-      appearance-none
-      w-full
-      rounded-xl
-      bg-white/10
-      px-4 py-2
-      pr-10
-      text-white
-      outline-none
-      ring-1 ring-white/10
-      transition
-      hover:ring-blue-500
-      focus:ring-2 focus:ring-blue-500
-      backdrop-blur
-      cursor-pointer
-    "
+                    className="peer w-full cursor-pointer appearance-none rounded-xl bg-white/10 px-4 py-2 pr-10 text-white ring-1 ring-white/10 backdrop-blur transition outline-none hover:ring-blue-500 focus:ring-2 focus:ring-blue-500"
                 >
                     <option className="bg-slate-900 text-white" value={0}>
                         Hoy
@@ -104,18 +69,7 @@ export default function SearchClima() {
 
                 {/* ICONO */}
                 <svg
-                    className="
-      pointer-events-none
-      absolute
-      right-3
-      top-1/2
-      h-4 w-4
-      -translate-y-1/2
-      text-slate-400
-      transition
-      peer-hover:text-blue-400
-      peer-focus:text-blue-400
-    "
+                    className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-slate-400 transition peer-hover:text-blue-400 peer-focus:text-blue-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -129,24 +83,12 @@ export default function SearchClima() {
                 </svg>
             </div>
 
-
             {/* ===== Botón ===== */}
             <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="
-          w-full sm:w-auto
-          rounded-xl
-          bg-blue-600
-          px-6 py-2
-          font-semibold
-          text-white
-          shadow-lg shadow-blue-600/30
-          hover:bg-blue-500
-          transition
-          cursor-pointer
-        "
+                className="w-full cursor-pointer rounded-xl bg-blue-600 px-6 py-2 font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-500 sm:w-auto"
             >
                 Buscar clima
             </motion.button>

@@ -12,23 +12,7 @@ export default function LinkButton({ text, icon, variants }: PropsLinkButton) {
         <motion.a
             href="https://github.com/EnriqueHM31?tab=repositories"
             target="_blank"
-            className="
-        bg-white
-        text-blue-950
-        px-4
-        py-2
-        rounded-md
-        font-bold
-        flex
-        items-center
-        gap-2
-        cursor-pointer
-        hover:bg-blue-700
-        hover:text-white
-        transition-all
-        duration-300
-        ease-in
-      "
+            className="flex cursor-pointer items-center gap-2 rounded-md bg-white px-4 py-2 font-bold text-blue-950 transition-all duration-300 ease-in hover:bg-blue-700 hover:text-white"
             initial={variants.initial}
             animate={variants.animate}
             transition={variants.transition}

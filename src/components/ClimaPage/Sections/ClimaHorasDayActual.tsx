@@ -6,10 +6,12 @@ interface ClimaHorasDayActualProps {
     today: WeatherData["forecast"]["forecastday"][0];
 }
 
-export default function ClimaHorasDayActual({ today }: ClimaHorasDayActualProps) {
+export default function ClimaHorasDayActual({
+    today,
+}: ClimaHorasDayActualProps) {
     return (
-        <section className="mt-10 no-scrollbar  mx-auto w-full">
-            <h2 className="text-sm tracking-wide text-slate-400 mb-3 text-center capitalize">
+        <section className="no-scrollbar mx-auto mt-10 w-full">
+            <h2 className="mb-3 text-center text-sm tracking-wide text-slate-400 capitalize">
                 Pronóstico por hora
             </h2>
 
@@ -20,7 +22,7 @@ export default function ClimaHorasDayActual({ today }: ClimaHorasDayActualProps)
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.05 }}
-                        className="min-w-[90px] rounded-2xl bg-white/5 backdrop-blur p-4 flex flex-col items-center gap-2 ring-1 ring-white/10"
+                        className="flex min-w-[90px] flex-col items-center gap-2 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 backdrop-blur"
                     >
                         <time className="text-xs text-slate-400">
                             {hour.time.split(" ")[1]}
@@ -37,8 +39,7 @@ export default function ClimaHorasDayActual({ today }: ClimaHorasDayActualProps)
                         </span>
                     </motion.article>
                 ))}
-
             </ContenedorScrollAnimado>
         </section>
-    )
+    );
 }

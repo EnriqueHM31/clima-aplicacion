@@ -14,8 +14,8 @@ export default function ForecastDays({ forecastday }: ForecastDaysProps) {
     if (forecastday.length === 1) return null;
 
     return (
-        <section className="mt-10 max-w-4xl mx-auto pb-8">
-            <h2 className="text-sm capitalize tracking-wide text-slate-400 mb-4">
+        <section className="mx-auto mt-10 max-w-4xl pb-8">
+            <h2 className="mb-4 text-sm tracking-wide text-slate-400 capitalize">
                 Pronóstico para los proximos días
             </h2>
 
@@ -34,7 +34,6 @@ export default function ForecastDays({ forecastday }: ForecastDaysProps) {
                     );
                 })}
             </div>
-
         </section>
     );
 }
