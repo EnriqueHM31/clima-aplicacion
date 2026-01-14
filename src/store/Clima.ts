@@ -9,6 +9,7 @@ interface ClimaState {
     handleChangeCiudad: (ciudad: string) => void;
     handleChangeDias: (dias: number) => void;
     obtenerClimaLugar: (ciudad: string, dias: number) => void;
+    reset: () => void;
 }
 
 
@@ -30,4 +31,10 @@ export const useClimaStore = create<ClimaState>((set) => ({
             console.log(error);
         }
     },
+    reset: () =>
+        set({
+            ciudad: "",
+            dias: 0,
+            dataClima: null,
+        }),
 }));
