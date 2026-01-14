@@ -1,11 +1,13 @@
 import { create } from "zustand";
-import { obtenerClimaLugar } from "../services/Clima";
+import { ServiceWetherApi } from "../services/Clima";
 import type { WeatherData } from "../types/dataClima";
+import { getErrorMessage } from "../utils/errores";
 
 interface ClimaState {
     dataClima: WeatherData | null;
     ciudad: string;
     dias: number;
+    error: string | null;
     handleChangeCiudad: (ciudad: string) => void;
     handleChangeDias: (dias: number) => void;
     obtenerClimaLugar: (ciudad: string, dias: number) => void;
@@ -19,6 +21,7 @@ export const useClimaStore = create<ClimaState>((set) => ({
     dataClima: null,
     ciudad: "",
     dias: 1,
+    error: null,
     handleChangeCiudad: (ciudad) => {
         set({ ciudad })
     },
@@ -27,10 +30,15 @@ export const useClimaStore = create<ClimaState>((set) => ({
     },
     obtenerClimaLugar: async (ciudad, dias) => {
         try {
-            const response = await obtenerClimaLugar(ciudad, dias);
-            set({ dataClima: response });
+            const response = await ServiceWetherApi(ciudad, dias);
+            set({ dataClima: response, error: null });
         } catch (error) {
-            console.log(error);
+            const mensaje = getErrorMessage(error);
+
+            set({
+                dataClima: null,
+                error: mensaje,
+            });
         }
     },
     reset: () =>
