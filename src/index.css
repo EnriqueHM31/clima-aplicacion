@@ -26,3 +26,34 @@
     border: 4px solid black;
     cursor: pointer;
 }
+
+select {
+    border: none !important;
+}
+
+select option {
+    background-color: #0f172a;
+    /* slate-900 */
+    color: #e5e7eb;
+    /* slate-200 */
+    cursor: pointer;
+    border: none
+}
+
+select option:hover {
+    background-color: #1e40af;
+    /* blue-800 */
+    color: white;
+
+    cursor: pointer;
+}
+
+select option:checked {
+    background-color: #2563eb;
+    /* blue-600 */
+    color: white;
+}
+
+select:focus + svg {
+    transform: translateY(5%) rotate(180deg);
+}
