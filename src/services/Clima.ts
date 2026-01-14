@@ -3,7 +3,7 @@ export async function obtenerClimaLugar(
     lugar: string,
     days: number
 ) {
-    const url = `${import.meta.env.VITE_API}q=${lugar}&days=${days}&aqi=yes&alerts=no`;
+    const url = `${import.meta.env.VITE_API}q=${lugar}&days=${days + 1}&aqi=yes&alerts=no`;
     console.log({ url });
 
     const response = await fetch(url);
