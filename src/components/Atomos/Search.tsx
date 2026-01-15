@@ -1,25 +1,10 @@
 import { motion } from "framer-motion";
+import { useSearch } from "../../hooks/useSearch";
 import { useClimaStore } from "../../store/Clima";
-import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
 
 export default function SearchClima() {
-    const { ciudad, dias, handleChangeCiudad, handleChangeDias, crearNewUrl, reset } = useClimaStore();
-    const navigate = useNavigate();
-
-    const handleNavigate = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (ciudad === "") {
-            reset();
-            toast.error("Error: Ingresa una ciudad");
-            return;
-        }
-        const UrlNew = crearNewUrl({ ciudad, dias });
-        navigate(UrlNew);
-        reset();
-    };
-
-    const OptionsSelect = Array.from({ length: 11 });
+    const { ciudad, dias, handleChangeCiudad, handleChangeDias } = useClimaStore();
+    const { handleNavigate, OptionsSelect } = useSearch();
 
     return (
         <motion.form
