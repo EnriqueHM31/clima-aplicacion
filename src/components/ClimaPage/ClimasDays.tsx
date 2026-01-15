@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { useClimaDay } from "../../hooks/useClimaDay";
 import type { ForecastDaysProps } from "../../types/dataClima.d";
 import ClimaDay from "../ClimaPage/ClimaDay";
 
 export default function ForecastDays({ forecastday }: ForecastDaysProps) {
-    const [openDay, setOpenDay] = useState<number | null>(null);
-
-    const handleCambiarDia = (index: number | null) => setOpenDay(index);
+    const { openDay, handleCambiarDia } = useClimaDay();
 
     if (forecastday.length === 1) return null;
 
