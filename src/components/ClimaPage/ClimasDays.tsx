@@ -10,8 +10,8 @@ export default function ForecastDays({ forecastday }: ForecastDaysProps) {
     if (forecastday.length === 1) return null;
 
     return (
-        <section className="mx-auto mt-10 max-w-4xl pb-8">
-            <h2 className="mb-4 text-sm tracking-wide text-slate-400 capitalize">Pronóstico para los proximos días</h2>
+        <section className="mx-auto mt-10 max-w-7xl pb-8">
+            <h2 className="mb-4 px-4 text-sm tracking-wide text-slate-400 capitalize">Pronóstico para los proximos días</h2>
 
             <div className="space-y-3">
                 {forecastday.slice(1).map((day, index) => {
