@@ -6,7 +6,7 @@ export function getLocalTime(localtime_epoch: number): string {
 }
 
 export function formatDayDate(dateString: string): string {
-    return new Date(`${dateString}T12:00:00`).toLocaleDateString("es-ES", {
+    return new Date(`${dateString}`).toLocaleDateString("es-ES", {
         weekday: "long",
         day: "numeric",
         month: "long",
