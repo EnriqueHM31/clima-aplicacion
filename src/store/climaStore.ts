@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { ServiceWetherApi } from "../services/Clima";
+import { ServiceWetherApi } from "../services/climaService";
 import type { WeatherData } from "../types/dataClima";
 import { getErrorMessage } from "../utils/errores";
 

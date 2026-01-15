@@ -4,9 +4,8 @@ export async function ServiceWetherApi(lugar: string, days: number) {
     const response = await fetch(url);
     const data = await response.json();
 
-    // 🔴 IMPORTANTE: lanzar el error REAL
     if (!response.ok) {
-        throw data; // ← aquí va el objeto { error: { code, message } }
+        throw data;
     }
 
     return data;
