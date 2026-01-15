@@ -6,8 +6,10 @@ export const traductor = (texto: string) => {
         "patchy rain nearby": "Lluvia parcial cerca",
         "sunny": "Soleado",
         "mist": "Niebla",
-        "overcast": "Nublado",
+        "overcast": "Completamente nublado",
         "moderate or heavy snow showers": "Lluvia moderada o fuerte",
+        "fog": "Niebla",
+        "moderate rain": "Lluvia moderada",
     };
 
     return traduccion[texto] ?? texto;
