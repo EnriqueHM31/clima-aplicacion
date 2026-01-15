@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaClock, FaGlobe } from "react-icons/fa";
 import type { LocationInfoBarProps } from "../../types/componentes.d";
+import { getLocalTime } from "../../utils/fechas";
 
 export default function LocationInfoBar({ location }: LocationInfoBarProps) {
-    const localTime = new Date(location.localtime_epoch * 1000).toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-    });
+    const localTime = getLocalTime(location.localtime_epoch);
 
     return (
         <motion.section
