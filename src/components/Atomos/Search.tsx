@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useSearch } from "../../hooks/useSearch";
-import { useClimaStore } from "../../store/Clima";
+import { useClimaStore } from "../../store/climaStore";
 
 export default function SearchClima() {
     const { ciudad, dias, handleChangeCiudad, handleChangeDias } = useClimaStore();

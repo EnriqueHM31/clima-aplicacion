@@ -6,7 +6,7 @@ import LocationInfoBar from "../components/ClimaPage/DataLocation";
 import ClimaLugarPage from "../components/ClimaPage/Sections/ClimaLugar";
 //import { obtenerClimaLugar } from "../services/Clima";
 import SearchClima from "../components/Atomos/Search";
-import { useClimaStore } from "../store/Clima";
+import { useClimaStore } from "../store/climaStore";
 import { toast } from "sonner";
 import ICONO from "/logo.ico";
 import { Link } from "react-router-dom";

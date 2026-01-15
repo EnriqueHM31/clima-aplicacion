@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { useClimaStore } from "../store/Clima";
+import { useClimaStore } from "../store/climaStore";
 
 export function useSearch() {
     const { ciudad, dias, crearNewUrl, reset } = useClimaStore();

@@ -2,7 +2,7 @@ import Hero from "../components/Home/Hero";
 import NavBar from "../components/Landing/NavBar";
 import CardsClimas from "../components/ClimaPage/Sections/CardsClimas";
 import { useEffect } from "react";
-import { useClimaStore } from "../store/Clima";
+import { useClimaStore } from "../store/climaStore";
 export default function HomePage() {
     const { reset } = useClimaStore();
 
