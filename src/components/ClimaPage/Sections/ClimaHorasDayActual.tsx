@@ -4,7 +4,7 @@ import type { ClimaHorasDayActualProps } from "../../../types/dataClima.d";
 
 export default function ClimaHorasDayActual({ today }: ClimaHorasDayActualProps) {
     return (
-        <section className="no-scrollbar mx-auto mt-10 w-full">
+        <section className="no-scrollbar mx-auto mt-10 w-full px-4">
             <h2 className="mb-3 text-center text-sm tracking-wide text-slate-400 capitalize">Pronóstico por hora de Hoy</h2>
 
             <ContenedorScrollAnimado>
