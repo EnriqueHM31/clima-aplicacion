@@ -30,7 +30,7 @@ export default function SearchClima() {
                 e.preventDefault();
                 handleNavigate(e);
             }}
-            className="flex w-full max-w-4xl flex-col items-center justify-center gap-4 sm:flex-row"
+            className="flex w-full max-w-4xl flex-2 flex-col items-center justify-center gap-4 sm:flex-row"
         >
             {/* ===== Ciudad ===== */}
             <input
