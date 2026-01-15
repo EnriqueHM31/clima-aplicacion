@@ -1,12 +1,9 @@
 import type { BotonDayDayProps } from "../../types/componentes.d";
+import { formatDayDate } from "../../utils/fechas";
 import { traductor } from "../../utils/traductor";
 
 export default function BotonDay({ day, index, isOpen, cambiarDia }: BotonDayDayProps) {
-    const date = new Date(`${day.date}T12:00:00`).toLocaleDateString("es-ES", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-    });
+    const date = formatDayDate(`${day.date}T12:00:00`);
     return (
         <button
             onClick={() => cambiarDia(isOpen ? null : index)}
