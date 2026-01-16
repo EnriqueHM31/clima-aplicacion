@@ -1,41 +1,16 @@
 // src/pages/ClimaLugar.tsx
-import { useEffect } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import LoaderGrid from "../components/Atomos/Loading";
 import LocationInfoBar from "../components/ClimaPage/DataLocation";
 import ClimaLugarPage from "../components/ClimaPage/Sections/ClimaLugar";
 //import { obtenerClimaLugar } from "../services/Clima";
-import SearchClima from "../components/Atomos/Search";
-import { useClimaStore } from "../store/climaStore";
-import { toast } from "sonner";
-import ICONO from "/logo.ico";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import SearchClima from "../components/Atomos/Search";
+import { useClima } from "../hooks/useClima";
+import ICONO from "/logo.ico";
 
 export default function LugarClima() {
-    const [searchParams] = useSearchParams();
-    const { dataClima, handleChangeDias, handleChangeCiudad, obtenerClimaLugar, error } = useClimaStore();
-    const { lugar } = useParams<{ lugar: string }>();
-    const navigate = useNavigate();
-    useEffect(() => {
-        if (error) {
-            navigate("/");
-            toast.error(error);
-        }
-        const days = Number(searchParams.get("days") ?? 0);
-        handleChangeDias(days);
-        handleChangeCiudad(lugar ?? "");
-
-        if (!lugar) return;
-
-        const fetchData = async () => {
-            //const data = await obtenerClimaLugar(lugar, days);
-            obtenerClimaLugar(lugar, days);
-        };
-
-        fetchData();
-    }, [lugar, handleChangeDias, searchParams, handleChangeCiudad, obtenerClimaLugar, error, navigate]);
-
+    const { dataClima } = useClima();
     return (
         <section className="w-full text-white">
             {!dataClima ? (

@@ -12,10 +12,6 @@ export default function AppRouter() {
             path: "/:lugar",
             element: <LugarClima />,
         },
-        {
-            path: "/:lugar/:days",
-            element: <LugarClima />,
-        }
     ]);
 
     return routes;

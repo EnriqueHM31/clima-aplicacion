@@ -14,7 +14,7 @@ export default function ClimaHorasDayActual({ today }: ClimaHorasDayActualProps)
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.05 }}
-                        className="flex min-w-[90px] flex-col items-center gap-2 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 backdrop-blur"
+                        className="flex min-w-22.5 flex-col items-center gap-2 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 backdrop-blur"
                     >
                         <time className="text-xs text-slate-400">{hour.time.split(" ")[1]}</time>
 
