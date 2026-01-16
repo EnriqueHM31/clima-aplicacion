@@ -14,7 +14,7 @@ export default function ClimaDay({ day, index, isOpen, handleCambiarDia }: Clima
                 {isOpen && (
                     <ContenedorScrollAnimado>
                         {day.hour.map((hour) => (
-                            <div key={hour.time} className="flex min-w-[90px] flex-col items-center gap-2 rounded-xl bg-black/40 p-3 ring-1 ring-white/10">
+                            <div key={hour.time} className="flex min-w-22.5 flex-col items-center gap-2 rounded-xl bg-black/40 p-3 ring-1 ring-white/10">
                                 <time className="text-xs text-slate-400">{hour.time.split(" ")[1]}</time>
 
                                 <img src={`https:${hour.condition.icon}`} alt={hour.condition.text} className="h-8 w-8" />
