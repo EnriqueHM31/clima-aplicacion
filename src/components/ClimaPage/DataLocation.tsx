@@ -14,7 +14,7 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
             className="mx-auto my-4 w-full max-w-6xl rounded-2xl border-b-2 border-slate-700 px-4 py-4 text-white ring-1 ring-white/10 backdrop-blur"
         >
             {/* Fila superior */}
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-4 md:gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3">
                     <FaMapMarkerAlt className="size-5 text-blue-400" />
                     <h1 className="text-lg font-semibold">
@@ -34,7 +34,7 @@ export default function LocationInfoBar({ location }: LocationInfoBarProps) {
             </div>
 
             {/* Fila inferior */}
-            <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+            <div className="mt-6 md:mt-3 flex flex-wrap items-center gap-4 text-sm text-slate-400">
                 <div className="flex items-center gap-4">
                     <FaGlobe className="size-5 text-blue-400" />
                     <span>
