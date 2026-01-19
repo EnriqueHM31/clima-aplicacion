@@ -21,7 +21,7 @@ export function useClima() {
 
         const fetchData = async () => {
             //const data = await obtenerClimaLugar(lugar, days);
-            obtenerClimaLugar(lugar, days);
+            obtenerClimaLugar(lugar.trim(), days);
         };
 
         fetchData();
