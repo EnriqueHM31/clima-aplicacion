@@ -14,7 +14,7 @@ export default function HomePage() {
         <>
             <NavBar />
             <main className="flex h-full min-h-[80dvh] flex-col items-center justify-center">
-                <div className="relative z-10 flex h-full flex-col items-center justify-center gap-10 px-6">
+                <div className="relative z-10 flex h-full flex-col items-center justify-center gap-10 px-2 md:px-6">
                     <Hero />
 
                     <CardsClimas />
