@@ -3,7 +3,7 @@ import SearchClima from "../Atomos/Search";
 
 export default function Hero() {
     return (
-        <div className="w-full max-w-4xl text-center">
+        <div className="w-full md:max-w-4xl text-center py-10 md:py-0">
             {/* Título */}
             <motion.h1
                 initial={{ opacity: 0, y: 30 }}
