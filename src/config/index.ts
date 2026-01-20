@@ -1,0 +1,1 @@
+export const URL_EMAIL = "http://192.168.1.73:3000/email/send-email";
