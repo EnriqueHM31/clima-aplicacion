@@ -14,7 +14,8 @@ export default function HomePage() {
     return (
         <>
             <NavBar />
-            <main className="flex h-full min-h-[80dvh] flex-col items-center justify-center mb-20">
+            <main className="flex h-full min-h-[80dvh] flex-col items-center justify-center mb-20 relative">
+                <div className="bg-linear-to-t from-black to-transparent to-40% w-full h-screen absolute top-0 left-0 z-0 "></div>
                 <div className="relative z-10 flex h-full flex-col items-center justify-center gap-10 px-2 md:px-6">
                     <Hero />
 
