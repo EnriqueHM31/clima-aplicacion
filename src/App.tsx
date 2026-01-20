@@ -1,6 +1,6 @@
+import { Toaster } from "sonner";
 import Fondo from "./components/Landing/Fondo";
 import AppRouter from "./routes/routes";
-import { Toaster } from "sonner";
 
 function App() {
     return (
