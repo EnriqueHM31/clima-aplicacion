@@ -3,7 +3,7 @@ import { containerVariantsLoading, itemVariantsLoading } from "../../constants/a
 
 export default function LoaderGrid() {
     return (
-        <div className="flex min-h-[90dvh] items-center justify-center">
+        <div className="flex min-h-screen items-center justify-center">
             <motion.div
                 variants={containerVariantsLoading}
                 animate="animate"
