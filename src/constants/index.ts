@@ -1,0 +1,1 @@
+export const paginbaDondeEsEnviadoEmail = 'Aplicacion del Clima';
