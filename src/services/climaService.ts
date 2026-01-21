@@ -3,9 +3,8 @@ export async function ServiceWetherApi(lugar: string, days: number) {
 
     const response = await fetch(url);
     const data = await response.json();
-
     if (!response.ok) {
-        throw data;
+        return { ok: false, message: data.message, error: data.error, data: null };
     }
 
     return data;
