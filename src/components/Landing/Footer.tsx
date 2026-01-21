@@ -27,7 +27,6 @@ export default function Footer() {
 
     const handleSubmitEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(dataEmail);
         if (!dataEmail.email) {
             toast.error("El email es requerido");
             return;
@@ -43,7 +42,6 @@ export default function Footer() {
             mensaje: dataEmail.mensaje
         })
 
-        console.log({ data });
         if (data.error !== null) {
             toast.error(data.error);
             return;
