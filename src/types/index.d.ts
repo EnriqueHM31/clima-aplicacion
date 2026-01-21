@@ -5,3 +5,8 @@ export interface MotionVariant {
     animate: Target;
     transition?: Transition;
 }
+
+export interface WeatherApiError {
+    code: number;
+    message: string;
+}
