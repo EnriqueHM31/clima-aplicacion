@@ -2,7 +2,6 @@ import { URL_EMAIL } from "../config";
 import { paginbaDondeEsEnviadoEmail } from "../constants";
 
 export async function enviarEmail({ email, mensaje }: { email: string, mensaje: string; }) {
-    console.log({ URL_EMAIL });
     const response = await fetch(URL_EMAIL, {
         method: "POST",
         headers: {
