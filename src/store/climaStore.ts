@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { ServiceWetherApi } from "../services/climaService";
 import type { WeatherApiError } from "../types";
 import type { WeatherData } from "../types/dataClima";
+import { capitalize } from "../utils/traductor";
 
 interface ClimaState {
     dataClima: WeatherData | null;
@@ -34,8 +35,10 @@ export const useClimaStore = create<ClimaState>((set) => ({
         set({ dias })
     },
     obtenerClimaLugar: async (ciudad, dias) => {
+
+        const lugar = capitalize(ciudad);
         try {
-            const { data, error } = (await ServiceWetherApi(ciudad, dias)) as ResponseWeatherData;
+            const { data, error } = (await ServiceWetherApi(lugar, dias)) as ResponseWeatherData;
             set({ dataClima: data, error: error });
         } catch (error: unknown) {
             set({
@@ -51,9 +54,10 @@ export const useClimaStore = create<ClimaState>((set) => ({
             dataClima: null,
         }),
     crearNewUrl: ({ ciudad, dias }: { ciudad: string, dias: number }) => {
+        const lugar = capitalize(ciudad);
         const params = new URLSearchParams();
         params.set("days", String(dias));
-        if (dias === 0) return `/${ciudad}`;
-        return `/${ciudad}?${params.toString()}`;
+        if (dias === 0) return `/${lugar}`;
+        return `/${lugar}?${params.toString()}`;
     }
 }));
