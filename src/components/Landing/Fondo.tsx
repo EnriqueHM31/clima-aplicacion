@@ -8,7 +8,7 @@ export default function Fondo({ children }: { children: React.ReactNode }) {
                 }}
             />
 
-            <div className="relative z-10 pt-6">{children}</div>
+            <div className="relative z-10 ">{children}</div>
         </div>
     );
 }
