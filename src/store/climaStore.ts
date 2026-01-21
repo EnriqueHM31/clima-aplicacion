@@ -1,13 +1,13 @@
 import { create } from "zustand";
 import { ServiceWetherApi } from "../services/climaService";
+import type { WeatherApiError } from "../types";
 import type { WeatherData } from "../types/dataClima";
-import { getErrorMessage } from "../utils/errores";
 
 interface ClimaState {
     dataClima: WeatherData | null;
     ciudad: string;
     dias: number;
-    error: string | null;
+    error: WeatherApiError | null;
     handleChangeCiudad: (ciudad: string) => void;
     handleChangeDias: (dias: number) => void;
     obtenerClimaLugar: (ciudad: string, dias: number) => void;
@@ -15,7 +15,12 @@ interface ClimaState {
     crearNewUrl: ({ ciudad, dias }: { ciudad: string, dias: number }) => string;
 }
 
-
+interface ResponseWeatherData {
+    ok: boolean;
+    message: string;
+    error: WeatherApiError;
+    data: WeatherData;
+}
 
 export const useClimaStore = create<ClimaState>((set) => ({
     dataClima: null,
@@ -30,14 +35,12 @@ export const useClimaStore = create<ClimaState>((set) => ({
     },
     obtenerClimaLugar: async (ciudad, dias) => {
         try {
-            const response = await ServiceWetherApi(ciudad, dias);
-            set({ dataClima: response, error: null });
-        } catch (error) {
-            const mensaje = getErrorMessage(error);
-
+            const { data, error } = (await ServiceWetherApi(ciudad, dias)) as ResponseWeatherData;
+            set({ dataClima: data, error: error });
+        } catch (error: unknown) {
             set({
                 dataClima: null,
-                error: mensaje,
+                error: error as WeatherApiError,
             });
         }
     },
