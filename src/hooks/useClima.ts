@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { useClimaStore } from "../store/climaStore";
+import { getErrorMessage } from "../utils/errores";
+import type { WeatherApiError } from "../types";
 
 export function useClima() {
     const [searchParams] = useSearchParams();
@@ -10,8 +12,10 @@ export function useClima() {
     const navigate = useNavigate();
     useEffect(() => {
         if (error) {
+            const message = getErrorMessage(error as WeatherApiError);
             navigate("/");
-            toast.error(error);
+            toast.error(message, { duration: 3000 });
+            return
         }
         const days = Number(searchParams.get("days") ?? 0);
         handleChangeDias(days);
