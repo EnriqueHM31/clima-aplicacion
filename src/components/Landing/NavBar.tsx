@@ -12,7 +12,7 @@ export default function NavBar() {
 
     return (
         <nav
-            className={`mx-auto mb-4 flex w-full max-w-6xl  items-center justify-between gap-4 py-1 md:flex-row
+            className={`mx-auto mb-4 flex w-full max-w-6xl  items-center justify-between gap-4 py-1 mt-5 md:flex-row
             ${matchLugar ? "flex-col gap-8" : "flex-row gap-4"}
         `}>
             <Link to="/" className="flex items-center gap-2 md:gap-4">
