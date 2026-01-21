@@ -1,11 +1,4 @@
-// Tipado del error que devuelve la API
-export interface WeatherApiError {
-    error: {
-        code: number;
-        message: string;
-    };
-}
-
+import type { WeatherApiError } from "../types";
 // Mapa de errores → mensajes amigables
 export const WEATHER_ERROR_MESSAGES: Record<number, string> = {
     1003: "Por favor ingresa una ciudad o ubicación válida.",
@@ -18,14 +11,9 @@ export const WEATHER_ERROR_MESSAGES: Record<number, string> = {
 };
 
 
-export function getErrorMessage(error: unknown): string {
-    if (
-        typeof error === "object" &&
-        error !== null &&
-        "error" in error &&
-        typeof (error as WeatherApiError).error.code === "number"
-    ) {
-        const code = (error as WeatherApiError).error.code;
+export function getErrorMessage(error: WeatherApiError): string {
+    if (error) {
+        const code = (error as WeatherApiError).code;
         return WEATHER_ERROR_MESSAGES[code] ?? WEATHER_ERROR_MESSAGES[9999];
     }
 
