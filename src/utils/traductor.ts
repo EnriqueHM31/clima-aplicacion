@@ -14,3 +14,8 @@ export const traductor = (texto: string) => {
 
     return traduccion[texto] ?? texto;
 };
+
+export function capitalize(texto: string): string {
+    const limpio = texto.trim().toLowerCase();
+    return limpio.charAt(0).toUpperCase() + limpio.slice(1);
+}
